@@ -1,0 +1,99 @@
+---
+const teamMembers = [
+  {
+    name: "Gabriel Pacheco",
+    role: "Ingeniero de IA",
+    specialty: "Machine Learning & LLMs",
+    initials: "GP",
+  },
+  {
+    name: "Andre",
+    role: "Ingeniera de IA",
+    specialty: "Computer Vision & NLP",
+    initials: "A",
+  },
+  {
+    name: "Nathan",
+    role: "Ingeniero Backend",
+    specialty: "Arquitectura & Cloud",
+    initials: "N",
+  },
+  {
+    name: "David",
+    role: "Ingeniera Backend",
+    specialty: "APIs & Bases de Datos",
+    initials: "D",
+  },
+  {
+    name: "Dan Rojas",
+    role: "Ingeniero Frontend",
+    specialty: "UI/UX & Interfaces",
+    initials: "DR",
+  },
+];
+
+const roleColors: Record<string, string> = {
+  "Ingeniero de IA": "primary",
+  "Ingeniera de IA": "primary",
+  "Ingeniero Backend": "tertiary",
+  "Ingeniera Backend": "tertiary",
+  "Ingeniero Frontend": "primary",
+};
+---
+
+<section id="equipo" class="section bg-surface-low">
+  <div class="orb orb-primary w-[400px] h-[400px] bottom-0 left-1/2 -translate-x-1/2 absolute"></div>
+
+  <div class="section-content">
+    <!-- Section Header -->
+    <div class="reveal text-center max-w-2xl mx-auto mb-16">
+      <span class="text-primary font-display text-sm font-medium tracking-widest uppercase mb-4 block">
+        Nuestro Equipo
+      </span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-6">
+        Las mentes detrás del
+        <span class="text-gradient">código</span>
+      </h2>
+      <p class="font-body font-light text-text-secondary text-lg leading-relaxed">
+        Cinco ingenieros con un solo objetivo: construir tecnología que haga la diferencia.
+      </p>
+    </div>
+
+    <!-- Team Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+      {teamMembers.map((member, index) => {
+        const color = roleColors[member.role] || "primary";
+        return (
+          <div
+            class="reveal group text-center"
+            style={`transition-delay: ${index * 80}ms;`}
+          >
+            {/* Avatar */}
+            <div class="relative mx-auto w-24 h-24 sm:w-28 sm:h-28 mb-5">
+              <div class={`w-full h-full rounded-2xl bg-surface-high flex items-center justify-center transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-${color}/10`}>
+                <span class={`font-display font-bold text-2xl text-${color}`}>
+                  {member.initials}
+                </span>
+              </div>
+              {/* Role indicator dot */}
+              <div class={`absolute -bottom-1 -right-1 w-5 h-5 rounded-lg bg-${color}/20 flex items-center justify-center`}>
+                <div class={`w-2.5 h-2.5 rounded-md bg-${color}`}></div>
+              </div>
+            </div>
+
+            {/* Info */}
+            <h3 class="font-display font-bold text-base tracking-tight text-text mb-0.5">
+              {member.name}
+            </h3>
+            <p class={`font-body text-xs font-medium text-${color} mb-1`}>
+              {member.role}
+            </p>
+            <p class="font-body text-xs text-text-secondary">
+              {member.specialty}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

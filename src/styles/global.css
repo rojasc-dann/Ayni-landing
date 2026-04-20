@@ -1,1 +1,184 @@
 @import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════
+   Ayni.AI — Andean High-Tech Editorial Design System
+   Tailwind v4 @theme tokens
+   
+   PARAMETRIZABLE: Cambiar cualquier valor de @theme
+   actualiza TODA la landing page automáticamente.
+   ══════════════════════════════════════════════════════ */
+
+@theme {
+  /* ── Surface Hierarchy ── */
+  --color-surface: #0f172a;
+  --color-surface-low: #141d2f;
+  --color-surface-mid: #1a2332;
+  --color-surface-high: #1e293b;
+  --color-surface-highest: #243044;
+
+  /* ── Accent Colors ── */
+  --color-primary: #e0b3ff;
+  --color-secondary: #6b21a8;
+  --color-tertiary: #7e87ff;
+
+  /* ── Text Colors ── */
+  --color-text: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-text-accent: #e0b3ff;
+
+  /* ── Typography ── */
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+
+  /* ── Spacing (section gaps) ── */
+  --spacing-section: 80px;
+  --spacing-section-sm: 64px;
+
+  /* ── Border Radius ── */
+  --radius-card: 16px;
+  --radius-button: 12px;
+
+  /* ── Transitions ── */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Base Styles ── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Glassmorphism Utility ── */
+
+.glass {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* ── Luminous Button ── */
+
+.btn-luminous {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-surface);
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: var(--radius-button);
+  border: none;
+  cursor: pointer;
+  transition: all 400ms var(--ease-smooth);
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-luminous:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+
+.btn-luminous:active {
+  filter: brightness(0.95);
+  transform: translateY(0);
+}
+
+/* ── Ghost Button ── */
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-weight: 500;
+  padding: 14px 32px;
+  border-radius: var(--radius-button);
+  border: 1px solid color-mix(in srgb, var(--color-text) 20%, transparent);
+  cursor: pointer;
+  transition: all 400ms var(--ease-smooth);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-ghost:hover {
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* ── Text Gradient Utility ── */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Atmospheric Orbs ── */
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-primary {
+  background: var(--color-primary);
+  opacity: 0.08;
+}
+
+.orb-tertiary {
+  background: var(--color-tertiary);
+  opacity: 0.06;
+}
+
+/* ── Section Base ── */
+
+.section {
+  position: relative;
+  padding: var(--spacing-section) 24px;
+  overflow: hidden;
+}
+
+.section-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Scroll Reveal Animation ── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 600ms var(--ease-smooth), transform 600ms var(--ease-smooth);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Selection Color ── */
+
+::selection {
+  background: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  color: var(--color-text);
+}

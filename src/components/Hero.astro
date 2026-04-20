@@ -1,0 +1,62 @@
+---
+
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/hero-bg.png"
+      alt=""
+      class="w-full h-full object-cover object-center"
+      fetchpriority="high"
+    />
+    <!-- Gradient overlay for depth -->
+    <div class="absolute inset-0 bg-gradient-to-b from-surface/30 via-surface/50 to-surface"></div>
+  </div>
+
+  <!-- Atmospheric Orbs -->
+  <div class="orb orb-primary w-[500px] h-[500px] -top-32 -left-32 absolute"></div>
+  <div class="orb orb-tertiary w-[400px] h-[400px] top-1/3 -right-20 absolute"></div>
+
+  <!-- Content -->
+  <div class="section-content text-center relative z-10 pt-24 pb-16">
+    <!-- Badge -->
+    <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-text-secondary mb-8">
+      <span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+      Innovación desde La Paz, Bolivia
+    </div>
+
+    <!-- Headline -->
+    <h1 class="reveal font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-tight max-w-4xl mx-auto mb-6" style="transition-delay: 100ms;">
+      Construimos el
+      <span class="text-gradient">Futuro Digital</span>
+      desde los Andes
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="reveal font-body font-light text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed" style="transition-delay: 200ms;">
+      Software de alto rendimiento potenciado por Inteligencia Artificial. 
+      Diseñado para impulsar la transformación digital de tu negocio.
+    </p>
+
+    <!-- CTAs -->
+    <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4" style="transition-delay: 300ms;">
+      <a href="#servicios" id="hero-cta-primary" class="btn-luminous text-base">
+        Explorar Servicios
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="#nosotros" id="hero-cta-secondary" class="btn-ghost text-base">
+        Conocer más
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="reveal mt-16 flex flex-col items-center gap-2 text-text-secondary opacity-60" style="transition-delay: 500ms;">
+      <span class="text-xs font-body tracking-widest uppercase">Scroll</span>
+      <div class="w-5 h-8 rounded-full border border-text-secondary/30 flex justify-center pt-1.5">
+        <div class="w-1 h-2 rounded-full bg-primary animate-bounce"></div>
+      </div>
+    </div>
+  </div>
+</section>
