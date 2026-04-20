@@ -1,17 +1,17 @@
-# Andean High-Tech Editorial — Design System
+# High-Altitude Digital Editorial — Design System
 
 > Sistema de diseño oficial para la landing page de **Ayni.AI**.
 > Toda decisión de UI/UX debe respetar estas reglas sin excepción.
 
 ---
 
-## 1. Visión Creativa: "The Ethereal Altiplano"
+## 1. Visión Creativa: "The Atmospheric Summit"
 
 ### Estética
 
 - **Prohibido** el estilo "SaaS estándar" (bloques simétricos, colores planos, layout genérico).
 - Priorizar **grandes espacios negativos**, **asimetría intencional** y **profundidad atmosférica**.
-- La interfaz debe sentirse como un paisaje etéreo del altiplano: expansivo, misterioso, profundo.
+- La interfaz debe sentirse como un paisaje etéreo de alta montaña: expansivo, misterioso, profundo.
 
 ### Estructura
 
